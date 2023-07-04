@@ -1,0 +1,13 @@
+.gc-about-title {
+    font-size: 30px;
+}
+
+.gc-about-text {
+    font-style: italic;
+}
+.wp-block-gcab-gc-about {
+    background: #AAAAAA;
+    padding: 30px;
+    border: 1px solid gray;
+    max-width: 100%;
+}
