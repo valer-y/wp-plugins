@@ -22,3 +22,4 @@ require_once (TAXON__PLUGIN_DIR . 'Taxonomist.php');
 register_activation_hook(__FILE__, ['Taxonomist', 'activation']);
 register_deactivation_hook(__FILE__, ['Taxonomist', 'deactivation']);
 
+$tax = new Taxonomist();

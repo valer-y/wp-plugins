@@ -2,24 +2,16 @@
 
 class Taxonomist {
 
-	private static $instances = [];
-
-	protected function __construct() {
+	public function __construct() {
 		$this->register();
 	}
 
-	public static function activation() : Taxonomist {
-
-		$cls = static::class;
-		if (!isset(self::$instances[$cls])) {
-			self::$instances[$cls] = new static();
-		}
-
-		return self::$instances[$cls];
-
+	public static function activation() {
+		flush_rewrite_rules();
 	}
 
 	public static function deactivation() : void {
+
 		flush_rewrite_rules();
 
 	}
@@ -28,7 +20,7 @@ class Taxonomist {
 		add_action('init', [$this, 'taxonomist_post_type']);
 	}
 
-	public function taxonomist_post_type() : void {
+	public function taxonomist_post_type() {
 
 		$labels = array(
 			'name'                  => _x( 'Taxonomist', 'Post type general name', 'taxonomist' ),
